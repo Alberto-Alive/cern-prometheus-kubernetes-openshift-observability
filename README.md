@@ -26,10 +26,10 @@ Hands-on observability lab showing how to monitor **containerised services** wit
 
 ### Kubernetes / OpenShift-style monitoring
 
-- [ ] Package the FastAPI app as a **container image**
-- [ ] Deploy it to a **Kubernetes/OpenShift-style cluster**:
-  - [ ] `Deployment` for the app pods
-  - [ ] `Service` exposing port `8000` (including `/metrics`)
+- [x] Package the FastAPI app as a **container image**
+- [x] Deploy it to a **Kubernetes/OpenShift-style cluster**:
+  - [x] `Deployment` for the app pods
+  - [x] `Service` exposing port `8000` (including `/metrics`)
 - [ ] Use a **ServiceMonitor** (Prometheus Operator / OpenShift pattern) to:
   - [ ] Discover the Service
   - [ ] Scrape `/metrics` from the in-cluster app
