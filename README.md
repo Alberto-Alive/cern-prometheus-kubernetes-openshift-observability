@@ -8,13 +8,13 @@ Hands-on observability lab showing how to monitor **containerised services** wit
 
 ### Local Docker observability lab
 
-- [ ] Run a **Prometheus + Grafana + node_exporter** stack via `docker-compose`
-- [ ] Scrape:
-  - [ ] Prometheus itself
-  - [ ] `node_exporter` (system / container metrics)
-  - [ ] An instrumented **FastAPI** application exposing `/metrics`
+- [x] Run a **Prometheus + Grafana + node_exporter** stack via `docker-compose`
+- [x] Scrape:
+  - [x] Prometheus itself
+  - [x] `node_exporter` (system / container metrics)
+  - [x] An instrumented **FastAPI** application exposing `/metrics`
 - [ ] Configure basic **PromQL** queries in Prometheus and Grafana
-- [ ] Add at least one **alert rule** in Prometheus (e.g. high request rate)
+- [x] Add at least one **alert rule** in Prometheus (e.g. high request rate)
 
 ### FastAPI application metrics
 
