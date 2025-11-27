@@ -30,12 +30,12 @@ Hands-on observability lab showing how to monitor **containerised services** wit
 - [x] Deploy it to a **Kubernetes/OpenShift-style cluster**:
   - [x] `Deployment` for the app pods
   - [x] `Service` exposing port `8000` (including `/metrics`)
-- [ ] Use a **ServiceMonitor** (Prometheus Operator / OpenShift pattern) to:
-  - [ ] Discover the Service
-  - [ ] Scrape `/metrics` from the in-cluster app
-- [ ] Query the in-cluster metrics (`app_requests_total`, `rate(...)`) from:
-  - [ ] Prometheus UI / OpenShift console
-  - [ ] Grafana, using Prometheus as a data source
+- [x] Use a **ServiceMonitor** (Prometheus Operator / OpenShift pattern) to:
+  - [x] Discover the Service
+  - [x] Scrape `/metrics` from the in-cluster app
+- [x] Query the in-cluster metrics (`app_requests_total`, `rate(...)`) from:
+  - [x] Prometheus UI / OpenShift console
+  - [x] Grafana, using Prometheus as a data source
 
 ---
 
@@ -90,3 +90,29 @@ The lab has two layers:
     ├── deployment.yaml         # FastAPI Deployment
     ├── service.yaml            # ClusterIP Service exposing the app
     └── servicemonitor.yaml     # Prometheus Operator / OpenShift-style monitor
+
+
+## 4. Screenshots
+
+### 4.1 Local Grafana – FastAPI request rate (Docker)
+
+This panel shows the request rate for the FastAPI app in the **local Docker-based Prometheus + Grafana stack**, using:
+
+```promql
+rate(app_requests_total[1m])
+```
+![Local Docker Grafana panel](docs/grafana-fastapi-rate-docker.png)
+
+### 4.2 In-cluster Prometheus – ServiceMonitor target
+
+The FastAPI service is discovered via a ServiceMonitor and scraped by the
+kube-prometheus-stack Prometheus instance running inside the Kubernetes cluster.
+
+![In-cluster Prometheus Targets page](docs/prometheus-target-fastapi-k8s.png)
+
+### 4.3 In-cluster Prometheus – FastAPI request rate
+
+The same rate(app_requests_total[1m]) query, but executed against the
+in-cluster Prometheus, confirming metrics are scraped from the Kubernetes/“OpenShift-style” setup.
+
+![In-cluster Prometheus graph](docs/prometheus-fastapi-rate-k8s.png)

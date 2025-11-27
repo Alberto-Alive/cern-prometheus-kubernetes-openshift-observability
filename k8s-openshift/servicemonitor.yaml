@@ -4,6 +4,7 @@ metadata:
   name: fastapi-metrics
   labels:
     app: fastapi-metrics
+    release: monitoring
 spec:
   selector:
     matchLabels:
