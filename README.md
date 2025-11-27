@@ -22,7 +22,7 @@ Hands-on observability lab showing how to monitor **containerised services** wit
 - [x] Instrument it with **prometheus-client** (Python)
 - [x] Expose application metrics on `GET /metrics`
 - [x] Create a custom counter (e.g. `app_requests_total`)
-- [ ] Visualise app metrics in Grafana (request count, rate, etc.)
+- [x] Visualise app metrics in Grafana (request count, rate, etc.)
 
 ### Kubernetes / OpenShift-style monitoring
 
