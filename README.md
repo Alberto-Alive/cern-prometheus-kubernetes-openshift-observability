@@ -90,7 +90,7 @@ The lab has two layers:
     ├── deployment.yaml         # FastAPI Deployment
     ├── service.yaml            # ClusterIP Service exposing the app
     └── servicemonitor.yaml     # Prometheus Operator / OpenShift-style monitor
-
+```
 
 ## 4. Screenshots
 
