@@ -13,7 +13,7 @@ Hands-on observability lab showing how to monitor **containerised services** wit
   - [x] Prometheus itself
   - [x] `node_exporter` (system / container metrics)
   - [x] An instrumented **FastAPI** application exposing `/metrics`
-- [ ] Configure basic **PromQL** queries in Prometheus and Grafana
+- [x] Configure basic **PromQL** queries in Prometheus and Grafana
 - [x] Add at least one **alert rule** in Prometheus (e.g. high request rate)
 
 ### FastAPI application metrics
